@@ -46,7 +46,7 @@ let display = () => {
         <td>${userdata[element].email}</td>
         <td>${userdata[element].phone}</td>
         <td>${userdata[element].location}</td>
-        <td><a href="index.html?key=${element} "  onclick="userdatadisplay()"><img  src="Frame 103.png" alt=""></a></td>
+        <td><a href="home.html?key=${element} "  onclick="userdatadisplay()"><img  src="Frame 103.png" alt=""></a></td>
         <td><a href="#"><img onclick="removedata(${element})" src="Vector.png" alt=""></a></td>
         </tr>`;
     };
