@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <title>Record</title>
     <style>
         .container {
@@ -124,7 +126,8 @@
         .filter button:active {
             transform: scale(0.95);
         }
-        .header{
+
+        .header {
             display: flex;
             justify-content: space-between;
         }
@@ -149,8 +152,8 @@
                     <option value="ISLD">ISLD</option>
                     <option value="ALL" selected>ALL</option>
                 </select>
-                <button onclick="sort()">SORT</button>
-                <button onclick="unsort()">UNSORT</button>
+                <button id="sortable">SORT</button>
+                <button id="unsort">UNSORT</button>
                 <button onclick="sorting()">Num sort</button>
             </div>
             <div class="paginations" style="display: flex; gap: 10px;">
@@ -180,45 +183,47 @@
             </tbody>
         </table>
         <div class="bottom-field">
+            <span class="pagination-detail"></span>
             <ul class="pagination">
                 <li class="prev"><a href="#" id="prev">&#139;&#139;</a></li>
-                <!-- <li class="list"><a href="#">01</a></li>
+                <li class="list"><a href="#">01</a></li>
                  <li class="list"><a href="#">02</a></li>
-                 <li class="list"><a href="#">03</a></li> -->
+                 <li class="list"><a href="#">03</a></li>
                 <li class="next"><a href="#" id="next">&#155;&#155;</a></li>
             </ul>
         </div>
     </div>
+  
     <script src="app.js"></script>
     <script>
-        let sorting = () => {
-            let a, b, i, shouldswitch;
-            let switching = true;
-            let table = document.querySelector(".tbody")
-            while (switching) {
-                switching = false;
-                console.log();
-                row = table.rows;
-                console.log(switching);
+        // let sorting = () => {
+        //     let a, b, i, shouldswitch;
+        //     let switching = true;
+        //     let table = document.querySelector(".tbody")
+        //     while (switching) {
+        //         switching = false;
+        //         console.log();
+        //         row = table.rows;
+        //         console.log(switching);
 
-                for (i = 0; i < (row.length - 1); i++) {
-                    shouldswitch = false;
-                    a = row[i].getElementsByTagName("td")[2];
-                    console.log(a);
-                    b = row[i + 1].getElementsByTagName("td")[2];
-                    console.log(b);
-                    if (Number(a.innerHTML) > Number(b.innerHTML)) {
-                        shouldswitch = true;
-                        break
-                    }
-                }
-                if (shouldswitch) {
-                    row[i].parentNode.insertBefore(row[i + 1], row[i])
-                    switching = true;
-                }
+        //         for (i = 0; i < (row.length - 1); i++) {
+        //             shouldswitch = false;
+        //             a = row[i].getElementsByTagName("td")[2];
+        //             console.log(a);
+        //             b = row[i + 1].getElementsByTagName("td")[2];
+        //             console.log(b);
+        //             if (Number(a.innerHTML) > Number(b.innerHTML)) {
+        //                 shouldswitch = true;
+        //                 break
+        //             }
+        //         }
+        //         if (shouldswitch) {
+        //             row[i].parentNode.insertBefore(row[i + 1], row[i])
+        //             switching = true;
+        //         }
 
-            }
-        }
+        //     }
+        // }
         // const searchInput = document.getElementById("search")
         // const tbdy = document.querySelectorAll("tbody tr");
         // console.log(tbdy);
